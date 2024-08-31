@@ -1,0 +1,5 @@
+__pycache__
+*.pth
+.env
+
+vivid-coloring/result_images

@@ -1,0 +1,18 @@
+@startuml
+participant "vivid-http" as http
+participant "vivid-coloring" as color
+
+note across: 전제: vivid-http와 vivid-coloring은 모두 이미지를 저장하는 파일 시스템의 특정 디렉토리에 접근 가능해야 한다
+
+group 성공
+    http -> color: exchange message <b>[queue=colorizing_request] body={ filename }</b>
+    color -> color: colorizing with deoldify model
+    color --> http: exchange message <b>[queue=colorizing_response] body={ success: true, filename }</b>
+end group
+
+group 실패
+    http -> color: exchange message <b>[queue=colorizing_request] body={ filename }</b>
+    color -> color: error when colorizing with deoldify model
+    color --> http: exchange message <b>[queue=colorizing_response] body={ success: false }</b>
+end group
+@enduml

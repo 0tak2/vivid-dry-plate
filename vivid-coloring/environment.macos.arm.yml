@@ -1,0 +1,27 @@
+# osx-arm64 환경을 지원하지 않는 mkl을 설치하지 않음
+# 안정성, 성능 등을 보장할 수 없음
+
+name: deoldify
+channels:
+- fastai
+- conda-forge
+- defaults
+dependencies:
+- pip
+- fastai=1.0.60
+- nomkl
+- python=3.10
+- pytorch::pytorch=1.12.0
+- pytorch::torchvision
+- pytorch::torchaudio
+- tensorboardX
+- jupyterlab
+- pillow>=9.0.0
+- ipywidgets
+- ffmpeg
+- pip:
+  - ffmpeg-python
+  - opencv-python>=4.2.0.32
+  - wandb
+  - yt-dlp
+  - pika==1.3.2
