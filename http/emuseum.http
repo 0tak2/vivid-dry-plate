@@ -1,0 +1,17 @@
+
+@SERVICE_KEY=
+@RELIC_CODE=PS0100100102000000100000
+
+###
+GET http://www.emuseum.go.kr/openapi/code?serviceKey={{SERVICE_KEY}}&parentCode=PS01
+Accept: application/json
+
+###
+GET http://www.emuseum.go.kr/openapi/relic/detail?serviceKey={{SERVICE_KEY}}&pageNo=1&numOfRows=10&id={{RELIC_CODE}} HTTP/1.1
+Accept: application/json
+
+###
+GET http://www.emuseum.go.kr/openapi/relic/list?serviceKey={{SERVICE_KEY}}&pageNo=1&numOfRows=10&name=%EA%B1%B4%ED%8C%90 HTTP/1.1
+Accept: application/json
+
+###
