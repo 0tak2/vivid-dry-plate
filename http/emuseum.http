@@ -1,5 +1,5 @@
 
-@SERVICE_KEY=
+@SERVICE_KEY=eMiSU%2BRuJG8ME3DV97Ha%2FtY9BUGa%2BUffaInlGgMF2bSWP3YjY3COCCF0sXnvq45xe7CZupSjyBNMKkmATzVmNg%3D%3D
 @RELIC_CODE=PS0100100102000000100000
 
 ###
@@ -7,7 +7,7 @@ GET http://www.emuseum.go.kr/openapi/code?serviceKey={{SERVICE_KEY}}&parentCode=
 Accept: application/json
 
 ###
-GET http://www.emuseum.go.kr/openapi/relic/detail?serviceKey={{SERVICE_KEY}}&pageNo=1&numOfRows=10&id={{RELIC_CODE}} HTTP/1.1
+GET http://www.emuseum.go.kr/openapi/relic/detail?serviceKey={{SERVICE_KEY}}&id={{RELIC_CODE}} HTTP/1.1
 Accept: application/json
 
 ###

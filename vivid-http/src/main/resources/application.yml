@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: vivid-http
+server:
+  port: ${SERVER_PORT:8080}
+rabbitmq:
+  host: ${RABBITMQ_HOST}
+  port: ${RABBITMQ_PORT}
+  username: ${RABBITMQ_USERNAME}
+  password: ${RABBITMQ_PASSWORD}
+emuseum:
+  service-key: ${EMUSEUM_SERVICE_KEY}
+image:
+  path: ${IMAGES_ROOT_PATH}
+  original-path: ${IMAGES_ORIGINAL_PATH:original}
+  result-path: ${IMAGES_RESULT_PATH:result}
+  thumbnail-path: ${IMAGES_THUMBNAIL_PATH:thumbnail}
