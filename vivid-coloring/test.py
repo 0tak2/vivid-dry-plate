@@ -6,6 +6,8 @@ import json
 
 load_dotenv(verbose=True)
 
+FILENAME = '2974.jpg'
+
 connection = None
 request_channel = None
 response_channel = None
@@ -16,8 +18,10 @@ def onResponse(ch, method, properties, body):
     response_body = json.loads(body)
     if response_body['success']:
         print(f'Colorizing completed... filename={response_body["filename"]}')
+        exit(0)
     else:
         print('Colorizing failed...')
+        exit(-1)
 
 def init():
     global request_channel
@@ -43,7 +47,7 @@ def main():
     request_channel.basic_publish(exchange='',
                         routing_key='colorizing_request',
                         body=json.dumps({
-                            'filename': 'pan000005.jpg'
+                            'filename': FILENAME
                         }))
     print(" [x] Sent request")
     response_channel.start_consuming()
