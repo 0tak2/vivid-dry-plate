@@ -3,3 +3,5 @@ __pycache__
 .env
 
 vivid-coloring/result_images
+
+images/
