@@ -33,10 +33,10 @@ def init():
     pika.PlainCredentials(os.getenv('RABBITMQ_USERNAME'), os.getenv('RABBITMQ_PASSWORD'))))
 
     request_channel = connection.channel()
-    request_channel.queue_declare(queue='colorizing_request')
+    request_channel.queue_declare(queue='colorizing_request', durable=True)
 
     response_channel = connection.channel()
-    response_channel.queue_declare(queue='colorizing_response')
+    response_channel.queue_declare(queue='colorizing_response', durable=True)
     response_channel.basic_consume(queue='colorizing_response',
                     auto_ack=True,
                     on_message_callback=onResponse)

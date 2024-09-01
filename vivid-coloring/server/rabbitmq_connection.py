@@ -14,9 +14,9 @@ class RabbitMQConnection:
                                                                 '/',
                                                                 pika.PlainCredentials(username, password)))
         self.request_channel = self.connection.channel()
-        self.request_channel.queue_declare(queue=REQUEST_QUEUE)
+        self.request_channel.queue_declare(queue=REQUEST_QUEUE, durable=True)
         self.response_channel = self.connection.channel()
-        self.response_channel.queue_declare(queue=RESPONSE_QUEUE)
+        self.response_channel.queue_declare(queue=RESPONSE_QUEUE, durable=True)
 
     def start(self, onRequest):
         self.logger.info(f'start to consume `{REQUEST_QUEUE}` ...')
