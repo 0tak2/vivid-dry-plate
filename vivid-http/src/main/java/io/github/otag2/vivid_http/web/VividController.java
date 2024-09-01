@@ -5,6 +5,8 @@ import io.github.otag2.vivid_http.core.RelicDetail;
 import io.github.otag2.vivid_http.core.VividService;
 import io.github.otag2.vivid_http.web.dto.BasicResponseDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,5 +26,11 @@ public class VividController {
     public BasicResponseDto<String> requestColorize(@PathVariable("relicId") String relicId) {
         this.colorizeService.requestColorize(relicId);
         return new BasicResponseDto<>(true, "Okay");
+    }
+
+    @GetMapping(value = "/dryplates/{relicId}/image", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public Resource requestColorize(@PathVariable("relicId") String relicId, @RequestParam("colorized") boolean colorized) {
+        return colorized ? this.vividService.getColorizedImage(relicId)
+                : this.vividService.getOriginalImage(relicId);
     }
 }
