@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Getter
 @Setter
 @ToString
-public class ImageProperties {
+public class ImagesProperties {
     private String path;
     private String originalPath;
     private String resultPath;

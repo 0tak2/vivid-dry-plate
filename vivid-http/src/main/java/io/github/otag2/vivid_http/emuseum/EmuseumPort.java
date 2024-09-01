@@ -1,7 +1,7 @@
 package io.github.otag2.vivid_http.emuseum;
 
 import io.github.otag2.vivid_http.support.properties.EmuseumProperties;
-import io.github.otag2.vivid_http.support.properties.ImageProperties;
+import io.github.otag2.vivid_http.support.properties.ImagesProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.buffer.DataBuffer;
@@ -22,7 +22,7 @@ import java.nio.file.StandardOpenOption;
 @Slf4j
 public class EmuseumPort {
     private final EmuseumProperties emuseumProperties;
-    private final ImageProperties imageProperties;
+    private final ImagesProperties imagesProperties;
     private final String baseUri = "http://www.emuseum.go.kr/openapi";
 
     public EmuseumRelicInfo fetchRelicInfo(String relicId) {
@@ -51,7 +51,7 @@ public class EmuseumPort {
     }
 
     public String downloadImage(String filename, String imageUri) {
-        Path path = Paths.get(this.imageProperties.getPath() + "/" + this.imageProperties.getOriginalPath() + "/" + filename);
+        Path path = Paths.get(this.imagesProperties.getPath() + "/" + this.imagesProperties.getOriginalPath() + "/" + filename);
 
         log.info("will download {} to {}", imageUri, path);
 
