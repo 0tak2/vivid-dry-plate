@@ -29,7 +29,7 @@ public class VividController {
     }
 
     @GetMapping(value = "/dryplates/{relicId}/image", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-    public Resource requestColorize(@PathVariable("relicId") String relicId, @RequestParam("colorized") boolean colorized) {
+    public Resource getRelicImage(@PathVariable("relicId") String relicId, @RequestParam("colorized") boolean colorized) {
         return colorized ? this.vividService.getColorizedImage(relicId)
                 : this.vividService.getOriginalImage(relicId);
     }
