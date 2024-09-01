@@ -24,7 +24,7 @@ public class ColorizeReceiver {
         }
 
         // todo: filename -> full image path on http
-        this.sseService.sendTo(responseDto.getFilename(),
+        this.sseService.sendTo(responseDto.getFilename().split("\\.")[0],
                 "completed",
                 new ColorizeResultDto(true, responseDto.getFilename()),
                 true);

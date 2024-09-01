@@ -41,7 +41,11 @@ public class SseService {
                         sseEmitterWrapper.getSseEmitter().send(SseEmitter.event().name(eventName).data(eventContent));
                         log.info("sent SSE event name={} content={}", eventName, eventContent);
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        log.error("IOException on sending SSE event name={} content={}", eventName, eventContent);
+                        this.sseEmitterList.remove(sseEmitterWrapper);
+                    } catch (Exception e) {
+                        log.error("Exception on sending SSE event name={} content={} exception={}", eventName, eventContent, e.getMessage());
+                        this.sseEmitterList.remove(sseEmitterWrapper);
                     }
                 });
 
