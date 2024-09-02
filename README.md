@@ -11,7 +11,8 @@
 ## 구조
 
 - RabbitMQ를 통해 컬러라이징 서버와 HTTP API 서버가 통신
-- ![diagram](./docs/rabbitmq.png)
+  - ![diagram](./docs/rabbitmq.png)
+- 변환 완료 후 HTTP API 서버에서 프론트엔드로 SSE 이벤트 발행
 
 ## Instruction
 
@@ -70,10 +71,6 @@ pnpm run dev
 popd
 ```
 
-## 구조
-
-
-
 ## 알려진 문제와 해결할 점
 
 - 프론트엔드에서 SSE 재연결을 계속 시도
@@ -82,11 +79,11 @@ popd
 - AI 모델 한계
   - 한국의 문화유산 이미지로 학습된 모델이 아니기 때문에 컬러라이징에 한계가 있음
   - 예시
-    - [[건판 1]](https://www.emuseum.go.kr/detail?relicId=PS0100100102000000100000) 단청과 바탕의 목재 색상이 구분되지 못함  
+    - [[건판 1]](https://www.emuseum.go.kr/detail?relicId=PS0100100102000000100000) 단청 부분 색상을 전혀 추론해내지 못했음  
       ![건판 1](./docs/example3.jpg)
-    - [[건판 3013]](https://www.emuseum.go.kr/detail?relicId=PS0100100102000301300000) 문자 주변이 붉게 얼룩지게 채색됨
+    - [[건판 3013]](https://www.emuseum.go.kr/detail?relicId=PS0100100102000301300000) 문자 주변이 붉게 얼룩짐  
       ![건판 3013](./docs/example4.jpg)
-    - [건판 11808](https://www.emuseum.go.kr/detail?relicId=PS0100100102001180800000) 레이블에 따르면 청화로 시문된 자기인데, 마치 동채처럼 붉게 채색됨
+    - [건판 11808](https://www.emuseum.go.kr/detail?relicId=PS0100100102001180800000) 레이블에 따르면 청화로 시문된 자기인데, 마치 동채처럼 붉게 채색된 부분이 일부 있음  
       ![[건판 11808]](./docs/example2.jpg)
 
     
