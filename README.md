@@ -1,7 +1,7 @@
 # vivid-dry-plate
 
 [국립중앙박물관 소장 유리건판](https://www.museum.go.kr/dryplate/main.do) 자료  
-AI 활용 컬러라이징 파이프라인 구성 및 데이터 활용 경험 향상 프로젝트
+딥러닝 모델 활용 컬러라이징 파이프라인 구성 및 사용자 경험 향상 프로젝트
 
 ![demo](./docs/demo.gif)
 
