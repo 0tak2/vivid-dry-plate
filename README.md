@@ -5,13 +5,8 @@
 
 ![demo](./docs/demo.gif)
 
-## Examples
-
-![건판3955](./docs/example1.jpg)  
-[건판3955](https://www.emuseum.go.kr/detail?relicId=PS0100100102000395500000)  
-
-![건판11808](./docs/example2.jpg)  
-[건판11808](https://www.emuseum.go.kr/detail?relicId=PS0100100102001180800000)  
+![건판 3955](./docs/example1.jpg)  
+[건판 3955](https://www.emuseum.go.kr/detail?relicId=PS0100100102000395500000)  
 
 ## 구조
 
@@ -87,6 +82,11 @@ popd
 - AI 모델 한계
   - 한국의 문화유산 이미지로 학습된 모델이 아니기 때문에 컬러라이징에 한계가 있음
   - 예시
-    - ![건판1](./docs/example3.jpg) 
-    - ![건판3013](./docs/example4.jpg)
+    - [[건판 1]](https://www.emuseum.go.kr/detail?relicId=PS0100100102000000100000) 단청과 바탕의 목재 색상이 구분되지 못함  
+      ![건판 1](./docs/example3.jpg)
+    - [[건판 3013]](https://www.emuseum.go.kr/detail?relicId=PS0100100102000301300000) 문자 주변이 붉게 얼룩지게 채색됨
+      ![건판 3013](./docs/example4.jpg)
+    - [건판 11808](https://www.emuseum.go.kr/detail?relicId=PS0100100102001180800000) 레이블에 따르면 청화로 시문된 자기인데, 마치 동채처럼 붉게 채색됨
+      ![[건판 11808]](./docs/example2.jpg)
+
     
