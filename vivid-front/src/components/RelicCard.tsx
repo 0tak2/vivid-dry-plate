@@ -15,7 +15,7 @@ export default function RelicCard ({ relicId, name, desc, relicCode, sizeInfo, c
     }, [colorAvailable]);
 
     return (
-        <Card>
+        <Card width='900px'>
             <CardHeader>
                 <Heading size='md'>{name} ({relicCode})</Heading>
             </CardHeader>
@@ -23,7 +23,7 @@ export default function RelicCard ({ relicId, name, desc, relicCode, sizeInfo, c
             <CardBody>
                 <Box>
                     <Image
-                        boxSize="500px" src={`${import.meta.env.VITE_SERVER_BASE_URL}/v1/dryplates/${relicId}/image?colorized=${isColor}`}
+                        src={`${import.meta.env.VITE_SERVER_BASE_URL}/v1/dryplates/${relicId}/image?colorized=${isColor}`}
                     />
                     <ButtonGroup spacing='2' marginTop='4'>
                         {
