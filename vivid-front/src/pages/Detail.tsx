@@ -30,6 +30,7 @@ export default function Detail() {
                     setColorAvailable(true);
 
                     evtSource.current?.close();
+                    evtSource.current = null;
                     return;
                 }
                 console.error('colorize failed')
@@ -44,7 +45,9 @@ export default function Detail() {
             setTimeout(() => setRelicDetail(response.data.data), 100);
         }
 
-        connectSse();
+        if (!colorAvailable) { // Strict 모드에서 두 번 렌더링되어 sse가 재연결되는 문제를 방지
+          connectSse();
+        }
         fetchData();
     }, []);
 
