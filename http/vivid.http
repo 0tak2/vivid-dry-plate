@@ -6,3 +6,4 @@ GET http://localhost:8080/v1/dryplates/{{RELIC_CODE}} HTTP/1.1
 POST http://localhost:8080/v1/dryplates/{{RELIC_CODE}}/colorize HTTP/1.1
 
 ###
+GET http://localhost:8080/v1/dryplates/{{RELIC_CODE}}/image?colorized=true HTTP/1.1
